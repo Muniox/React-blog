@@ -1,9 +1,8 @@
-$lightGreen : #b9e7e7;
+$lightGreen: #b9e7e7;
 
 .app {
   display: flex;
   justify-content: center;
-
   .container {
     width: 1024px;
 
@@ -11,10 +10,7 @@ $lightGreen : #b9e7e7;
       text-decoration: none;
       color: inherit;
     }
-
-
-
-    //LOGIN & Register
+    //LOGIN & REGISTER
 
     .auth {
       display: flex;
@@ -57,19 +53,18 @@ $lightGreen : #b9e7e7;
           color: red;
           text-align: center;
         }
-        
+
         span {
           font-size: 12px;
           text-align: center;
         }
-        
       }
     }
 
-    //Navbar
+    //NAVBAR
 
     .navbar {
-      .container{
+      .container {
         padding: 10px 0;
         display: flex;
         align-items: center;
@@ -79,7 +74,6 @@ $lightGreen : #b9e7e7;
             width: 120px;
           }
         }
-
         .links {
           display: flex;
           align-items: center;
@@ -89,7 +83,7 @@ $lightGreen : #b9e7e7;
             font-size: 16px;
             font-weight: 300;
           }
-          
+
           span {
             cursor: pointer;
           }
@@ -115,7 +109,8 @@ $lightGreen : #b9e7e7;
       }
     }
 
-    //Footer
+    //FOOTER
+
     footer {
       margin-top: 100px;
       padding: 20px;
@@ -124,15 +119,14 @@ $lightGreen : #b9e7e7;
       align-items: center;
       justify-content: space-between;
       font-size: 12px;
-
       img {
         height: 50px;
       }
     }
 
-    //Home
-    .home {
+    //HOME
 
+    .home {
       .posts {
         margin-top: 50px;
         display: flex;
@@ -143,7 +137,7 @@ $lightGreen : #b9e7e7;
           display: flex;
           gap: 100px;
 
-          &:nth-child(2n+1) {
+          &:nth-child(2n + 1) {
             flex-direction: row-reverse;
           }
 
@@ -202,7 +196,7 @@ $lightGreen : #b9e7e7;
       }
     }
 
-    //Single
+    //SINGLE
 
     .single {
       display: flex;
@@ -220,12 +214,11 @@ $lightGreen : #b9e7e7;
           object-fit: cover;
         }
 
-        .user{
+        .user {
           display: flex;
           align-items: center;
           gap: 10px;
           font-size: 14px;
-
           img {
             width: 50px;
             height: 50px;
@@ -254,12 +247,11 @@ $lightGreen : #b9e7e7;
           color: #333;
         }
 
-        p{
+        p {
           text-align: justify;
           line-height: 30px;
         }
       }
-
       .menu {
         flex: 2;
         display: flex;
@@ -290,9 +282,9 @@ $lightGreen : #b9e7e7;
             width: max-content;
             padding: 7.5px 15px;
             cursor: pointer;
+            color: teal;
             background-color: white;
             border: 1px solid teal;
-            color: teal;
 
             &:hover {
               border: 1px solid white;
@@ -304,7 +296,8 @@ $lightGreen : #b9e7e7;
       }
     }
 
-    //Write
+    //WRITE
+
     .add {
       margin-top: 20px;
       display: flex;
@@ -315,25 +308,23 @@ $lightGreen : #b9e7e7;
         display: flex;
         flex-direction: column;
         gap: 20px;
-        
+
         input {
           padding: 10px;
           border: 1px solid lightgray;
         }
 
         .editorContainer {
-          height: 400px;
-          // overflow: scroll;
-          // border: 1px solid lightgray;
+          height: 300px;
+          //overflow: scroll;
+          //border: 1px solid lightgray;
 
           .editor {
             height: 100%;
             border: none;
-            
           }
         }
       }
-      
 
       .menu {
         flex: 2;
@@ -344,36 +335,34 @@ $lightGreen : #b9e7e7;
         .item {
           border: 1px solid lightgray;
           padding: 10px;
-          flex: 1;
+          flex:1;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           font-size: 12px;
           color: #555;
 
-          h1 {
+          h1{
             font-size: 20px;
           }
 
-          .file {
+          .file{
             text-decoration: underline;
             cursor: pointer;
           }
 
-          .buttons {
+          .buttons{
             display: flex;
             justify-content: space-between;
 
-            :first-child {
+            :first-child{
               cursor: pointer;
               color: teal;
               background-color: white;
               border: 1px solid teal;
               padding: 3px 5px;
             }
-
-            
-            :last-child {
+            :last-child{
               cursor: pointer;
               color: white;
               background-color: teal;
@@ -382,7 +371,7 @@ $lightGreen : #b9e7e7;
             }
           }
 
-          .cat {
+          .cat{
             display: flex;
             align-items: center;
             gap: 2px;
@@ -391,6 +380,5 @@ $lightGreen : #b9e7e7;
         }
       }
     }
-
   }
 }
