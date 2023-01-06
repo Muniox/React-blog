@@ -5,3 +5,7 @@ export const postRouter = Router();
 
 postRouter
     .get('/', addPost)
+    .get('/:id', addPost)
+    .post('/', addPost)
+    .delete('/:id',)
+    .patch('/')
