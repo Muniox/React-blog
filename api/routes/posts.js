@@ -1,11 +1,11 @@
 import {Router} from "express";
-import {addPost} from "../controllers/users.controller.js";
+import {addPost, deletePost, getPost, getPosts, updatePost} from "../controllers/posts.controller.js";
 
 export const postRouter = Router();
 
 postRouter
-    .get('/', addPost)
-    .get('/:id', addPost)
+    .get('/', getPosts)
+    .get('/:id', getPost)
     .post('/', addPost)
-    .delete('/:id',)
-    .patch('/')
+    .delete('/:id', deletePost)
+    .put('/:id', updatePost);
