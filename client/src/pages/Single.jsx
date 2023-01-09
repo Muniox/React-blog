@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import Edit from "../img/edit.png";
 import Delete from "../img/delete.png";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import {Menu} from "../components/Menu"
 import axios from "axios";
 import moment from "moment";
@@ -11,6 +11,7 @@ export const Single = () => {
     const [post, setPost] = useState({});
 
     const location = useLocation();
+    const navigate = useNavigate();
 
     const postId = location.pathname.split("/")[2];
 
@@ -19,14 +20,25 @@ export const Single = () => {
     useEffect(() => {
         (async () => {
             try{
-                const res = await axios.get(`api/posts/${postId}`);
-                console.log(res.data)
+                const res = await axios.get(`/api/posts/${postId}`);
+                console.log(res.data, postId)
                 setPost(res.data)
             }catch (error) {
                 console.log(error);
             }
         })();
     },[postId]);
+
+    const handleDelete = async () => {
+        try{
+            await axios.delete(`/api/posts/${postId}`);
+            navigate('/')
+        }catch (error) {
+            console.log(error);
+        }
+    }
+
+
     return (
         <div className="single">
             <div className="content">
@@ -35,8 +47,10 @@ export const Single = () => {
                     alt=""
                 />
                 <div className="user">
-                    <img src="" alt=""/>
-
+                    {post.userImg && <img
+                        src={post.userImg}
+                        alt=""
+                    />}
                     <div className="info">
                         <span>{post.username}</span>
                         <p>Posted {moment(post.date).fromNow()} </p>
@@ -45,7 +59,11 @@ export const Single = () => {
                         <Link to={`/write?edit=2`}>
                             <img src={Edit} alt=""/>
                         </Link>
-                        <img src={Delete} alt=""/>
+                        <img
+                            onClick={handleDelete}
+                            src={Delete}
+                            alt=""
+                        />
                     </div>}
                 </div>
                 <h1>{post.title}</h1>

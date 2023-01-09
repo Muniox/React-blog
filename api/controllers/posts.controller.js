@@ -14,7 +14,17 @@ export const getPosts = async (req, res) => {
 }
 
 export const getPost = async (req, res) => {
-    res.json("from controller");
+    const postId = req.params.id
+    
+    try {
+        const [result] = await pool.execute('SELECT `username`, `title`, `desc`, p.img, u.img AS userImg, `cat`, `date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = :postId', {
+            postId
+        });
+        return res.status(200).json(result[0]);
+    } catch (err) {
+        return res.json(err)
+    }
+
 }
 
 export const addPost = async (req, res) => {
